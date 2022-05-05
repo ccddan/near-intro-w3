@@ -1,8 +1,8 @@
 import { Context, storage } from "near-sdk-as";
 
-// return the string 'hello world'
-export function helloWorld(names: string[]): string {
-  return names.map<string>((name) => `hello ${name}`).join(", ");
+// return the string 'hello <predecessor>'
+export function helloWorld(): string {
+  return `hello ${Context.predecessor}`;
 }
 
 // read the given key from account (contract) storage
